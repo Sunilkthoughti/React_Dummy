@@ -4,11 +4,16 @@ import React, { useState } from 'react';
 
 export default function Create() {
     const [name, setName] = useState('');
-    const [surname, setUsername] = useState('');
-    const [username, setSurname] = useState('');
+    const [surname, setSurname] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const postData = () => {
+        console.log(name);
+        console.log(surname);
+        console.log(username);
+        console.log(email);
+        console.log(password);
         axios.post('http://localhost:4000/student/register',{
             name,
             surname,
@@ -23,15 +28,15 @@ export default function Create() {
             <Form className="create-form">
                 <Form.Field>
                     <label>name</label>
-                    <input placeholder='Name' onChange={(e) => setName(e.target.value) } />
+                    <input placeholder='Name' onChange={(e) => setName(e.target.value)} />
                 </Form.Field>
                 <Form.Field>
                     <label>surname</label>
-                    <input placeholder='Surname' onChange={(e) => setSurname(e.target.value) } />
+                    <input placeholder='Surname' onChange={(e) => setSurname(e.target.value)} />
                 </Form.Field>
                 <Form.Field>
                     <label>username</label>
-                    <input placeholder='Username' onChange={(e) => setUsername(e.target.value) } />
+                    <input placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
                 </Form.Field>
                 <Form.Field>
                     <label>email</label>

@@ -21,10 +21,14 @@ export default function Update() {
     }, [])
 
     const updateAPIData = () => {
-        axios.patch('http://localhost:4000/student/update/${id}', {
+        axios.patch(`http://localhost:4000/student/update/${id}`, {
             name,
             surname,
             username
+    }, {
+        headers: {
+            'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzIxMjQ5MjN9.YwxyYHd_fUlriWVSOuXkfZ57SpARox9-B2Nry7XUrwk"
+        }
     })
     }
 

@@ -1,12 +1,13 @@
 import './App.css';
 import Create from './components/Create';
 import Login from './components/Login';
-import Read from './components/Read';
 import Update from './components/Update';
+import Read from './components/Read';
 import Delete from './components/Delete'
 
-// import Login from './components/Login'
+
 import {Routes, Route} from 'react-router-dom'
+// import { List } from 'semantic-ui-react';
 function Home() {
   return(
     <div>hello</div>
