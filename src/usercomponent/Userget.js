@@ -3,16 +3,13 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Table } from 'semantic-ui-react'
-export default function Read() {
+export default function Userget() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:4000/student/get`, {
-            // headers: {
-            //     "auth-token": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzIxNDI0NDF9.C_XtSngDpn1mhaQQlqBC7vwxA-NGCUDLTn1TsMOuHvY'
-            // }
+        axios.get(`http://localhost:4000/users/`, {
         })
             .then((response) => {
-                setAPIData(response.data);
+                setAPIData(response.APIdata);
             })
     }, [])
 
@@ -22,9 +19,9 @@ export default function Read() {
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Name</Table.HeaderCell>
-                        <Table.HeaderCell>surname</Table.HeaderCell>
-                        <Table.HeaderCell>Username</Table.HeaderCell>
+                        <Table.HeaderCell>Surname</Table.HeaderCell>
                         <Table.HeaderCell>Email</Table.HeaderCell>
+                        <Table.HeaderCell>Age</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -33,8 +30,8 @@ export default function Read() {
                             <Table.Row>
                                 <Table.Cell>{data.name}</Table.Cell>
                                 <Table.Cell>{data.surname}</Table.Cell>
-                                <Table.Cell>{data.username}</Table.Cell>
                                 <Table.Cell>{data.email}</Table.Cell>
+                                <Table.Cell>{data.age}</Table.Cell>
 
                             </Table.Row>
                         )
